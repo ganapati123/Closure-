@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <script>
+        function outer(){
+            var x = 10;
+          function inner(){
+            console.log(x)   //10
+          }
+          return inner()      //return the inner function
+        }
+      let res = outer()
+      console.log(res)    //total innerblock is defining
+       // variable x value we can access out of the main function
+
+
+     //accesing variables of a function even its execution completes or out of its scope
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <input type="submit" value="click" onclick = "updateCount()"/>
+    <p id="click">clicked:0</p>
+
+    <script> 
+
+        function secureUpdateCount(){
+            let count = 0  //local var
+           function inner(){
+            count += 1
+            let p = document.getElementById('click')
+            p.innerHTML = `clicked:${count}`
+            console.log()
+           }
+           return inner
+        }
+        let updateCount = secureUpdateCount() //HERE any no.of times you can click on button it is update and show the clicked number securely
+         updateCount()  //clicked:1 is initialized will displayed by defalut
+        
+
+
+         let updateCount1 = secureUpdateCount()
+         updateCount1()
+         updateCount1()     //Here override updateCount   clicked:2
+
+         let updateCount2 = secureUpdateCount()
+         updateCount2()
+         updateCount2()
+         updateCount2()    // Here override updateCount1   clicked:3
+       
+    </script>
+</body>
+</html>

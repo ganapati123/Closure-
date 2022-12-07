@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clicked Button</title>
+</head>
+<body>
+    <input type="submit" value="click" onclick = "updateCount()"/>
+    <p id="click">clicked:0</p>
+
+    <script> 
+
+        function updateCount(){
+            let count = 0  //local var
+            count += 1
+            let p = document.getElementById('click')
+            p.innerHTML = `clicked:${count}`
+
+        }
+        updateCount()
+      
+//Here drawback is : you click on button no.of times, clicked count is only 1 is show
+       
+    </script>
+
+</body>
+</html>
